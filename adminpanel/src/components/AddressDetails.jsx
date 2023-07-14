@@ -1,7 +1,8 @@
 import React from "react";
 import Map from "./Map";
 const AddressDetails = ({ addressData }) => {
-  console.log(addressData, "this is address data");
+  //user address details array
+
   const userDetailsData = [
     {
       title: "Street",
@@ -38,6 +39,7 @@ const AddressDetails = ({ addressData }) => {
         );
       })}
       <div style={{ padding: "2% 0%", marginLeft: "20%" }}>
+        {/* component to show map  */}
         <Map location={location} zoomLevel={8} latlonData={addressData?.geo} />
       </div>
     </div>

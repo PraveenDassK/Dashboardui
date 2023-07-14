@@ -2,6 +2,7 @@ import React from "react";
 import ProfileImage from "../assests/images/teamsbk_icon.jpeg";
 import "../styles/Profile.css";
 const PersonDetails = ({ userData }) => {
+  //user name details array
   const userDetailsData = [
     {
       title: "Username",

@@ -1,7 +1,7 @@
 import React from "react";
 
 const CompanyDetails = ({ companyData }) => {
-  console.log(companyData, "this is data");
+  //user company details array
   const userDetailsData = [
     {
       title: "Name",
@@ -18,7 +18,9 @@ const CompanyDetails = ({ companyData }) => {
   ];
   return (
     <div>
-      <div style={{ textAlign: "center" }} className='address-header'>
+      <div
+        style={{ textAlign: "center", marginRight: "20%" }}
+        className='address-header'>
         Company
       </div>
       {userDetailsData.map((eachValue, index) => {

@@ -22,8 +22,7 @@ const PageLayout = ({ children }) => {
       : eachUser.id === Number(arrayParam)
   );
 
-  console.log(singleUserData, "this is data from pagelay");
-  useEffect(() => {}, []);
+  //sidebar data with navigation function
   const sidebarData = [
     {
       name: "Profile",

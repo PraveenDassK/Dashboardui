@@ -34,28 +34,27 @@
 }
 .details-title {
   color: gray;
-  font-size: 20;
+  font-size: 18px;
   font-weight: 500;
-  width: 50%;
+  width: 40%;
   text-align: end;
 }
 .details-value {
   color: #212529;
-  font-size: 20;
+  font-size: 18px;
   font-weight: 500;
   width: 50%;
 }
-.center-border{
-    border-bottom: rgb(190, 188, 188) solid 1px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.center-border {
+  border-bottom: rgb(190, 188, 188) solid 1px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.center-container{
-  width:"100%";
-  padding:3% 10%;
+.center-container {
+  width: "100%";
+  padding: 3% 10%;
 }
 .profile-left_container {
   width: 38%;
@@ -64,8 +63,8 @@
 .profile-right_container {
   width: 60%;
 }
-.address-details{
-   display: flex;
+.address-details {
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -87,21 +86,47 @@
   font-weight: 500;
   width: 30%;
 }
-.address-header{
+.address-header {
   color: gray;
   font-size: 20;
   font-weight: 500;
   text-align: left;
   margin-left: 10%;
 }
-.google-map{
-     height: 300px;
-     width: 100%;
+.google-map {
+  height: 300px;
+  width: 100%;
 }
-.map-bottom{
+.map-bottom {
   margin: 2% 0%;
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  gap:10px;
+  gap: 10px;
+}
+.lat_text {
+  color: gray;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+}
+.lat_value {
+  color: black;
+  font-weight: 500;
+  margin-left: 1%;
+}
+
+@media (min-width: 1000px) and ( max-width: 1450px) {
+  .details-title {
+  color: gray;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: end;
+}
+.details-value {
+  color: #212529;
+  font-size: 14px;
+  font-weight: 500;
+}
 }

@@ -70,8 +70,8 @@ const Header = ({ name, userData, selectedUser }) => {
           src={selectedUser?.[0]?.profilepicture}
           style={{ height: "70px", width: "70px", borderRadius: "35px" }}
         />
-        <div>{selectedUser?.[0]?.name}</div>
-        <div>{selectedUser?.[0]?.email}</div>
+        <div className='name'>{selectedUser?.[0]?.name}</div>
+        <div className='email'>{selectedUser?.[0]?.email}</div>
         {userData.map((eachValue, index) => {
           console.log(eachValue);
           return (

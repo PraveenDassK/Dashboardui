@@ -10,7 +10,9 @@
 .sidebar {
   width: 20%;
   height: 100vh;
-  background-color: blue;
+  /* background-color: blue; */
+    background: linear-gradient(to bottom, #5c20f4 45%, #7056c7 100%);
+
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -22,7 +24,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  padding: 0% 5%;
+  padding: 0% 15%;
 }
 .sidebar-title {
   width: 100%;
@@ -38,7 +40,7 @@
 .right-arrow {
   position: absolute;
   top: 0;
-  right: -30%;
+  right: -40%;
   background: #ffffff;
   width: 35%;
   border-top-left-radius: 25px;
