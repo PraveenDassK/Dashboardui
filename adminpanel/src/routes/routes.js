@@ -8,10 +8,10 @@ const RoutesPage = () => {
   return (
     <Routes>
       <Route path='/' element={<Landing />} />
-      <Route path='/profile' element={<Profile />} />
-      <Route path='/posts' element={<Posts />} />
-      <Route path='/gallery' element={<Gallery />} />
-      <Route path='/todo' element={<Todo />} />
+      <Route path='/Profile' element={<Profile />} />
+      <Route path='/Posts' element={<Posts />} />
+      <Route path='/Gallery' element={<Gallery />} />
+      <Route path='/Todo' element={<Todo />} />
     </Routes>
   );
 };

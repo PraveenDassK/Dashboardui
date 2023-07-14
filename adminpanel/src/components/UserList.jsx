@@ -4,8 +4,11 @@ import { useNavigate } from "react-router-dom";
 const UserList = ({ userData }) => {
   const navigate = useNavigate();
   //function for navigate to profile page
-  const handleNavigate = () => {
-    navigate("/profile");
+  const handleNavigate = (eachValue) => {
+    //passing id with identifier to profile page
+    const queryParams = new URLSearchParams();
+    queryParams.set("id", JSON.stringify(eachValue?.id));
+    navigate(`/Profile?${queryParams.toString()}`);
   };
   return (
     <div className='main-container'>
@@ -13,7 +16,10 @@ const UserList = ({ userData }) => {
       <div style={{ padding: " 0% 5%" }}>
         {userData.map((eachValue, index) => {
           return (
-            <div className='userlist' key={index} onClick={handleNavigate}>
+            <div
+              className='userlist'
+              key={index}
+              onClick={() => handleNavigate(eachValue)}>
               <img
                 alt='profile_image'
                 src={eachValue?.profilepicture}

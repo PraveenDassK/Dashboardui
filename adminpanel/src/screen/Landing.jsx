@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../styles/Landing.css";
 import UserList from "../components/UserList";
+import { UserContext } from "../context/UserContext";
 const Home = () => {
-  const [userData, setUserData] = useState([]);
-
-  useEffect(() => {
-    loadData();
-  });
-  const loadData = async () => {
-    const value = await fetch("https://panorbit.in/api/users.json");
-    const userDetails = await value.json();
-    setUserData(userDetails?.users);
-  };
+  // getting users data from context
+  const userData = useContext(UserContext);
   return (
     <div style={{ position: "relative" }}>
       {/* Svg for curve background */}
