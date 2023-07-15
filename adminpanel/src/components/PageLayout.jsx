@@ -122,7 +122,9 @@ const PageLayout = ({ children }) => {
             <BiMessage />
             <span>Chats</span>
           </div>
-          <div style={{ marginRight: "8px" }} onClick={handleChatlist}>
+          <div
+            style={{ marginRight: "8px", cursor: "pointer" }}
+            onClick={handleChatlist}>
             {chatModal ? <AiOutlineDown /> : <PiCaretUpBold />}
           </div>
         </div>

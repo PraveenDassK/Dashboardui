@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     gap:10px;
+    cursor: pointer;
 }
 .chat-body{
   background-color: white;

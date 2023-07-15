@@ -4,6 +4,7 @@ import { PiCaretUpBold } from "react-icons/pi";
 import { AiOutlineDown } from "react-icons/ai";
 import { IoMdSend } from "react-icons/io";
 const ChatBox = ({ handleMinimize, handleChatClose, chatBoxData }) => {
+  //data for send and receive message
   const messageData = [
     {
       receive: "Lorem ipsum dolor sit amet,",
@@ -43,9 +44,12 @@ const ChatBox = ({ handleMinimize, handleChatClose, chatBoxData }) => {
             display: "flex",
             gap: "10px",
             alignItems: "center",
+            cursor: "pointer",
           }}>
           <AiOutlineDown onClick={handleMinimize} />
-          <div onClick={handleChatClose}>X</div>
+          <div onClick={handleChatClose} style={{ cursor: "pointer" }}>
+            X
+          </div>
         </div>
       </div>
       <div className='chat-body'>
@@ -63,9 +67,9 @@ export default ChatBox;
 const ChatBody = ({ messageData }) => {
   return (
     <div>
-      {messageData.map((eachMessage, index) => {
+      {messageData?.map((eachMessage, index) => {
         return (
-          <div>
+          <div key={index}>
             {eachMessage?.time ? (
               <div className='time-style'>{eachMessage?.time} </div>
             ) : null}
