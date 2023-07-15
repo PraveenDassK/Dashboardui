@@ -3,8 +3,17 @@ import "../styles/Layout.css";
 import Header from "./Header";
 import { useNavigate, useLocation } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-
+import { BiMessage } from "react-icons/bi";
+import { PiCaretUpBold } from "react-icons/pi";
+import { AiOutlineDown } from "react-icons/ai";
+import ChatlistModal from "./ChatlistModal";
+import ChatBox from "./ChatBox";
 const PageLayout = ({ children }) => {
+  //state for chatlist modal visble
+  const [chatModal, setChatModal] = useState(false);
+  //state to pass data from chatlist to chatbox
+  const [chatBoxData, setChatBoxData] = useState([]);
+  const [chatBoxVisible, setChatBoxVisible] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   // getting users data from context
@@ -41,6 +50,37 @@ const PageLayout = ({ children }) => {
       navigate: () => navigate("/Todo"),
     },
   ];
+
+  //chat list modalclose handlefunction
+
+  const handleChatlist = () => {
+    if (!chatModal) {
+      setChatModal(true);
+    } else {
+      setChatModal(false);
+      setChatBoxVisible(false);
+    }
+  };
+  //function to pass value and visble chatbox
+
+  const handleChatBox = (value) => {
+    setChatBoxData(value);
+    setChatBoxVisible(true);
+  };
+
+  //function to minimize  chatlist and close  chatbox
+
+  const handleMinimize = () => {
+    setChatBoxVisible(false);
+    setChatModal(false);
+  };
+
+  // function to close chatbox
+
+  const handleChatClose = () => {
+    setChatBoxVisible(false);
+  };
+
   return (
     <div className='layout-container'>
       {/* used row-reverse in css */}
@@ -75,6 +115,31 @@ const PageLayout = ({ children }) => {
           })}
         </div>
       </div>
+      {/* Bottom chat list container */}
+      <div className='chatlist-container'>
+        <div className='chat-list_hiddencontainer'>
+          <div className='chatname-text' onClick={handleChatlist}>
+            <BiMessage />
+            <span>Chats</span>
+          </div>
+          <div style={{ marginRight: "8px" }} onClick={handleChatlist}>
+            {chatModal ? <AiOutlineDown /> : <PiCaretUpBold />}
+          </div>
+        </div>
+        {chatModal ? (
+          <ChatlistModal userData={userData} handleChatBox={handleChatBox} />
+        ) : null}
+      </div>
+      {/* Bottom chat box container */}
+      {chatBoxVisible ? (
+        <div className='chatbox-container'>
+          <ChatBox
+            chatBoxData={chatBoxData}
+            handleMinimize={handleMinimize}
+            handleChatClose={handleChatClose}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

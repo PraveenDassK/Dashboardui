@@ -54,7 +54,7 @@ const Header = ({ name, userData, selectedUser }) => {
           <img
             alt='header_image'
             src={selectedUser?.[0]?.profilepicture}
-            style={{ height: "30px", width: "30px", borderRadius: "25%" }}
+            style={{ height: "30px", width: "30px", borderRadius: "15px" }}
           />
         </div>
         <div className='name'>{selectedUser?.[0]?.name}</div>
@@ -83,7 +83,11 @@ const Header = ({ name, userData, selectedUser }) => {
                 <img
                   alt='header_image'
                   src={eachValue?.profilepicture}
-                  style={{ height: "30px", width: "30px", borderRadius: "25%" }}
+                  style={{
+                    height: "30px",
+                    width: "30px",
+                    borderRadius: "15px",
+                  }}
                 />
               </div>
               <div className='name_list'>{eachValue?.name}</div>
